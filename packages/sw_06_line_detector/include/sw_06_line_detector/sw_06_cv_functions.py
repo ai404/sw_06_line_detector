@@ -70,7 +70,7 @@ def dilate(bitwise, kernel):
         """
 			git the matrix with the same size as the kernel, centered at i,j coordinates in bitwise
         """
-        shrunk = pad_bitwise[ i:i + w , j:j + h]
+        shrunk = pad_bitwise[ i:i + w , j:j +h]
         return np.any(kernel & shrunk)
     return np.array([[ process(i,j) for j in range(bitwise.shape[1])] for i in range(bitwise.shape[0])],dtype=np.uint8)
 	#return binary_dilation(bitwise, kernel)
