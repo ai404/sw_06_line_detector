@@ -67,9 +67,9 @@ def dilate(bitwise, kernel):
 	# pad the bitwise matrix with zeros
     pad_bitwise  = np.pad(bitwise, [(pad_w, pad_w), (pad_h, pad_h)], mode='constant', constant_values=0)
     def process(i, j):
-		"""
+        """
 			git the matrix with the same size as the kernel, centered at i,j coordinates in bitwise
-		"""
+        """
         shrunk = pad_bitwise[ i:i + w , j:j + h]
         return np.any(kernel & shrunk)
     return np.array([[ process(i,j) for j in range(bitwise.shape[1])] for i in range(bitwise.shape[0])],dtype=np.uint8)
