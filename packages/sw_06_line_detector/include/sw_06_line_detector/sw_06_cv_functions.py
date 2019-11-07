@@ -59,6 +59,7 @@ def getStructuringElement(shape, size):
 
     return np_obj.T
     """
+    
     return cv2.getStructuringElement(shape, size)
 
 def dilate(bitwise, kernel):
